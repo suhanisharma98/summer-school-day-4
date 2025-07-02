@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog Layout with CSS Grid & Sticky Sidebar</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar main"
+          "footer footer";
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+      }
+
+      header {
+        grid-area: header;
+        background-color: #4a90e2;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      aside {
+        grid-area: sidebar;
+        background-color: #f4f4f4;
+        padding: 20px;
+        position: relative;
+      }
+
+      .sticky-menu {
+        position: sticky;
+        top: 20px;
+      }
+
+      .sticky-menu ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sticky-menu li {
+        margin: 10px 0;
+      }
+
+      main {
+        grid-area: main;
+        background-color: #ffffff;
+        padding: 20px;
+        overflow-y: auto;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      footer {
+        grid-area: footer;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 15px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr auto auto;
+        }
+
+        aside {
+          position: static;
+        }
+
+        .sticky-menu {
+          position: static;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Blog</h1>
+    </header>
+
+    <aside>
+      <nav class="sticky-menu">
+        <ul>
+          <li><a href="#">Category 1</a></li>
+          <li><a href="#">Category 2</a></li>
+          <li><a href="#">Category 3</a></li>
+          <li><a href="#"> Category 4</a></li>
+          <li><a href="#"> Category 5</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <section>
+        <h2>Blog Post 1</h2>
+        <p>
+          From Curiosity to Code: My Tech Story So Far When I began my Computer
+          Engineering degree, I was deeply curious about how websites worked
+          behind the scenes. That curiosity turned into late nights exploring
+          HTML, CSS, JavaScript, and eventually diving into frameworks like
+          React and backend tools like Node.js. My passion evolved through
+          personal projects, challenges, and hands-on learning—especially
+          through my Full Stack Web Development Internship at IIT Jammu, where I
+          contributed to real-world applications that helped monitor systems and
+          visualize data effectively. This journey is just beginning, and I’m
+          excited for every step ahead.
+        </p>
+      </section>
+      <section>
+        <h2>Blog Post 2</h2>
+        <p>
+          When Theory Became Practice Operating System concepts can feel
+          abstract until you apply them. That’s exactly what I did with my
+          project on the NRU (Not Recently Used) Page Replacement Algorithm.
+          Written in C++, it simulates how the operating system manages memory
+          and makes decisions about which pages to replace. This project
+          challenged me to think like a systems programmer and gave me a
+          newfound appreciation for how computers manage resources efficiently.
+          It’s one of my favorite ways of blending academics with real
+          implementation.
+        </p>
+      </section>
+      <section>
+        <h2>Blog Post 3</h2>
+        <p>
+          Turning User Needs into Tech Solutions Managing hostel room
+          allocations manually can be messy and inefficient. So I built a Hostel
+          Accommodation System — a C++ project focused on organizing student
+          information, automating room assignments, and ensuring clarity for
+          both students and wardens. This taught me how important user-centered
+          logic is and how clean data flow leads to better systems. It wasn’t
+          just about writing code—it was about solving a practical problem,
+          which made it deeply satisfying.
+        </p>
+      </section>
+      <section>
+        <h2>Blog Post 4</h2>
+        <p>
+          A Real-World Dive into Full Stack Development Working as a full-stack
+          web development intern at IIT Jammu was one of the most rewarding
+          experiences in my tech journey. I worked with a team to build internal
+          dashboards, learned best practices in version control, responsive
+          design, and backend integration. More importantly, I understood the
+          importance of clean code, teamwork, and scalable thinking. It wasn’t
+          just about learning frameworks—it was about learning how to think like
+          a developer in the real world.
+        </p>
+      </section>
+      <section>
+        <h2>Blog Post 5</h2>
+        <p>
+          Getting Hands-On with Tech Simulations Recently, I completed three
+          Deloitte Australia virtual job simulations through Forage: In Data
+          Analytics, I used Tableau and Excel to classify and analyze datasets.
+          In Tech Consulting, I designed a smart dashboard system. In
+          Cybersecurity, I investigated threats and supported a client during a
+          simulated cyber breach. These experiences broadened my perspective
+          beyond coding—teaching me about data storytelling, secure systems, and
+          strategic thinking. They aligned perfectly with my passion for
+          impactful tech solutions and gave me a glimpse into diverse tech
+          domains.
+        </p>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Suhani Sharma Blog. All rights reserved.</footer>
+  </body>
+</html>
